@@ -76,6 +76,10 @@ if __name__ == '__main__':
     main()
 '''
 
+
+
+'''
+#双色球问题
 from random import randrange,random,randint,sample
 
 def random_select():
@@ -103,9 +107,69 @@ def main():
         display(random_select())
 if __name__ == '__main__':
     main()
+'''
 
-    
-    
+
+#约瑟夫环问题
+def find_genius():
+    persons = [True] * 30 
+    counter, index, num = 0,0,0 
+    while counter < 15:
+        if persons[index]:
+            num += 1
+        if num == 9:
+            persons[index] = False
+            num = 0
+            counter += 1
+        index += 1
+        # 保证索引的值一直是从0到29
+        index %= 30
+    for person in persons:
+        if person:
+            print("基", end = ' ')
+        else:
+            print('非',end = ' ')
+
+if __name__ == '__main__':
+    find_genius()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
     
