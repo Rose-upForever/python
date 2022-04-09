@@ -98,9 +98,26 @@ def merge_sorted(items, comp = lambda x, y : x < y):
     if len(item) < 2:
         return  item
     mid = len(item) // 2
-    left = merge_sorted(item[:mid],comp)
-    right = merge_sorted(item[mid:],comp)
+    left = merge_sorted(item[:mid], comp)
+    right = merge_sorted(item[mid:], comp)
     return merge(left, right, comp)
+
+# 折半查找
+def half_find(items, target):
+    item = items[:]
+    start, end = 0, len(item)
+    while start < end:
+        mid = (start + end) // 2
+        if target > item[mid]:
+            start = mid + 1
+        if target == item[mid]:
+            return item[mid]
+        if target < item[mid]:
+            end = mid - 1
+        item = item[start : end]
+
+
+
 
 if __name__ == '__main__':
     main2()
