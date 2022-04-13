@@ -1,5 +1,5 @@
 from abc import  ABCMeta, abstractmethod
-
+'''封装， 继承，以及通过工厂类创建对象'''
 class Emplyee(metaclass = ABCMeta):
     '''定义雇员抽象类'''
     def __init__(self,name):
